@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}false">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <current-flow
+                                        jcr:primaryType="nt:unstructured"
+                                        fieldLabel="現在のフロー"
+                                        fieldDescription="現在の問い合わせ状態(入力、確認、完了から選択)"
+                                        name="./currentFlow"
+                                        sling:resourceType="granite/ui/components/foundation/form/select">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <input
+                                                jcr:primaryType="nt:unstructured"
+                                                text="入力"
+                                                value="入力"/>
+                                            <check
+                                                jcr:primaryType="nt:unstructured"
+                                                text="確認"
+                                                value="確認"/>
+                                            <complete
+                                                jcr:primaryType="nt:unstructured"
+                                                text="完了"
+                                                value="完了"/>
+                                        </items>
+                                    </current-flow>
+                                </items>
+                            </column>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

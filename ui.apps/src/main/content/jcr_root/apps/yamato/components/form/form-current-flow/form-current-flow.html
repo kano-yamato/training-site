@@ -1,0 +1,6 @@
+<sly data-sly-use.currentFlow="${ 'com.adobe.aem.guides.yamato.core.models.form.CurrentFlow' }"></sly>
+<div class="form-flow">
+    <ol data-sly-list="${ currentFlow.flowNameToHtmlClass }">
+        <li class="${ currentFlow.flowNameToHtmlClass[item] ? 'is-current' : '' }">${ item }</li>
+    </ol>
+</div>

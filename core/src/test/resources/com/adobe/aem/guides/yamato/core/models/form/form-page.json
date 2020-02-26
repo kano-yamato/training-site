@@ -1,0 +1,33 @@
+{
+    "form-page": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+            "jcr:primaryType": "cq:PageContent",
+            "jcr:title": "form-test-page",
+            "root": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                "responsivegrid": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                    "container": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "sling:resourceType": "yamato/components/form/container",
+                        "form_current_flow": {
+                            "currentFlow": "入力",
+                            "sling:resourceType": "yamato/components/form/form-current-flow"
+                        },
+                        "form_current_flow_2": {
+                            "currentFlow": "確認",
+                            "sling:resourceType": "yamato/components/form/form-current-flow"
+                        },
+                        "form_current_flow_3": {
+                            "currentFlow": "完了",
+                            "sling:resourceType": "yamato/components/form/form-current-flow"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
