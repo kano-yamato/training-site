@@ -1,4 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    sling:hideResource="{Boolean}true"/>
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}false">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items
+                            jcr:primaryType="nt:unstructured"
+                            sling:hideChildren="[columns]">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <method
+                                        jcr:primaryType="nt:unstructured"
+                                        defaultValue="POST"
+                                        fieldLabel="method"
+                                        fieldDescription="formタグのmethod要素"
+                                        name="./method"
+                                        sling:resourceType="granite/ui/components/foundation/form/select">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <get
+                                                jcr:primaryType="nt:unstructured"
+                                                text="GET"
+                                                value="GET"/>
+                                            <post
+                                                jcr:primaryType="nt:unstructured"
+                                                text="POST"
+                                                value="POST"/>
+                                        </items>
+                                    </method>
+                                    <action
+                                        jcr:primaryType="nt:unstructured"
+                                        fieldLabel="action"
+                                        fieldDescription="formタグのaction要素"
+                                        name="./action"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"/>
+                                </items>
+                            </column>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
