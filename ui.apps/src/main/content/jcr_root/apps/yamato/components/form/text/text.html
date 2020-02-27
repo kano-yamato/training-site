@@ -1,0 +1,20 @@
+<div class="form-row">
+    <div class="form-label">${ properties.label }<span data-sly-test="${ properties.required }" data-sly-text="必須" class="required"></span></div>
+    <div class="form-field">
+        <textarea
+            data-sly-test.useTextArea="${ properties.type == 'textarea' }"
+            name="${ properties.name }"
+            placeholder="${ properties.helpMessage }"
+            cols="30"
+            rows="10">
+                ${ properties.value }
+        </textarea>
+        <input
+            data-sly-test="${ !useTextArea }"
+            type="${ properties.type }"
+            name="${ properties.name }"
+            size="60"
+            value="${ properties.value }"
+            placeholder="${ properties.helpMessage }" />
+    </div>
+</div>
