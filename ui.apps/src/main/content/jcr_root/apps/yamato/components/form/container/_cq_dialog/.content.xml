@@ -47,6 +47,27 @@
                                         fieldDescription="formタグのaction要素"
                                         name="./action"
                                         sling:resourceType="granite/ui/components/foundation/form/textfield"/>
+                                    <current-flow
+                                        jcr:primaryType="nt:unstructured"
+                                        fieldLabel="現在のフロー"
+                                        fieldDescription="現在の問い合わせ状態(入力、確認、完了から選択)"
+                                        name="./currentFlow"
+                                        sling:resourceType="granite/ui/components/foundation/form/select">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <input
+                                                jcr:primaryType="nt:unstructured"
+                                                text="入力"
+                                                value="入力"/>
+                                            <check
+                                                jcr:primaryType="nt:unstructured"
+                                                text="確認"
+                                                value="確認"/>
+                                            <complete
+                                                jcr:primaryType="nt:unstructured"
+                                                text="完了"
+                                                value="完了"/>
+                                        </items>
+                                    </current-flow>
                                 </items>
                             </column>
                         </items>

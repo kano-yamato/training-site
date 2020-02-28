@@ -1,6 +1,12 @@
 <section class="contact-section01">
     <div class="inner">
-        <sly data-sly-resource="${ 'current-flow' @ resourceType='yamato/components/form/form-current-flow', decorationTagName='div' }"></sly>
+        <sly data-sly-use.currentFlow="${ 'com.adobe.aem.guides.yamato.core.models.form.CurrentFlow' }">
+            <div class="form-flow">
+                <ol data-sly-list="${ currentFlow.flowNameToHtmlClass }">
+                    <li class="${ currentFlow.flowNameToHtmlClass[item] ? 'is-current' : '' }">${ item }</li>
+                </ol>
+            </div>
+        </sly>
         <p class="form-prologue">弊社の製品・サービスに関するお問い合わせ、インターンシップのご応募等については、下記フォームよりお問い合わせください。<br />
             通常2～3営業日以内にご返信いたします。</p>
         <div id="mw_wp_form_mw-wp-form-16" class="mw_wp_form mw_wp_form_input">
