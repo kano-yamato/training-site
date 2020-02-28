@@ -11,7 +11,30 @@
             通常2～3営業日以内にご返信いたします。</p>
         <div id="mw_wp_form_mw-wp-form-16" class="mw_wp_form mw_wp_form_input">
             <form method="${ properties.method }" action="${ properties.action }" enctype="multipart/form-data">
-                <sly data-sly-resource="${ @ resourceType='wcm/foundation/components/parsys'}"></sly>
+                <div class="form-box">
+                    <sly data-sly-resource="${ @ resourceType='wcm/foundation/components/parsys'}"></sly>
+                    <p class="policy">個人情報の取り扱いに関する要項<a href="https://www.yamato-ltd.com/privacy/"><span
+                        class="policy-note">個人情報保護方針</span></a>をご確認のうえ、ご同意いただける場合は「同意する」にチェックを入れてください。</p>
+                    <div class="agree">
+                        <span class="mwform-checkbox-field horizontal-item">
+                            <label for="js-privacy-check-1">
+                                <input type="checkbox" name="個人情報の取り扱い[data][]" value="同意する" id="js-privacy-check-1"
+                                    class="checkbox01-input" />
+                                <span class="mwform-checkbox-field-text">同意する</span>
+                            </label>
+                        </span>
+                        <input type="hidden" name="個人情報の取り扱い[separator]" value="," />
+                        <input type="hidden" name="__children[個人情報の取り扱い][]"
+                            value="{&quot;\u540c\u610f\u3059\u308b&quot;:&quot;\u540c\u610f\u3059\u308b&quot;}" />
+                    </div>
+                    <div class="form-button"><button type="submit" name="submitConfirm" value="confirm"
+                            class="form-button-submit">入力内容を確認</button>
+                    </div>
+                    <div class="form-button-box">
+                        <div class="form-button-back"></div>
+                        <div class="form-button-confirm"></div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
