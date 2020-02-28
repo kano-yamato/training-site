@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Form Options Field"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.wcm.components.form.options.v2.editor]"
+    helpPath="https://www.adobe.com/go/aem_cmp_form_options_v2"
+    trackingFeature="core-components:form-options:v2">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:hideChildren="[source,fromList,fromDatasource,fromLocal,aboutHeading,description,optionTypes,title]">
+                                            <mainHeading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                level="{Long}3"
+                                                text="Main"/>
+                                            <types
+                                                granite:class="cmp-form-options__editor-type"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="optionのタイプ"
+                                                fieldLabel="タイプ"
+                                                name="./type">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <checkbox
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Checkboxes"
+                                                        value="checkbox"/>
+                                                    <radio
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Radio buttons"
+                                                        value="radio"/>
+                                                    <dropdown
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Drop-down"
+                                                        value="drop-down"/>
+                                                </items>
+                                            </types>
+                                            <label
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="ラベル"
+                                                name="./label"
+                                                required="{Boolean}true"/>
+                                            <name
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="データ送信時の名前"
+                                                fieldLabel="name属性"
+                                                name="./name"
+                                                required="{Boolean}true"/>
+                                            <options
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldDescription="選択肢を追加してください。「無効」を選んだ場合、表示はされますが選択できなくなります"
+                                                fieldLabel="選択肢"
+                                                renderReadOnly="{Boolean}true">
+                                                <field
+                                                    granite:class="cmp-form-options__editor-item-multifield-composite-item coral-Well"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./items">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <container
+                                                            granite:class="cmp-form-options__editor-item-multifield-composite-item-container"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <selected
+                                                                    granite:class="cmp-form-option-item-active"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                    name="./selected"
+                                                                    text="選択済"
+                                                                    uncheckedValue="false"
+                                                                    value="{Boolean}true"/>
+                                                                <disabled
+                                                                    granite:class="cmp-form-option-item-disabled"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                    name="./disabled"
+                                                                    text="無効"
+                                                                    value="{Boolean}true"/>
+                                                            </items>
+                                                        </container>
+                                                        <text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Text"
+                                                            name="./text"/>
+                                                        <value
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Value"
+                                                            name="./value"/>
+                                                    </items>
+                                                </field>
+                                            </options>
+                                            <required
+                                                granite:class="cmp-form-text__required"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="入力欄が必須かどうか"
+                                                name="./required"
+                                                text="必須"
+                                                value="true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -24,6 +24,29 @@
                         "form_current_flow_3": {
                             "currentFlow": "完了",
                             "sling:resourceType": "yamato/components/form/form-current-flow"
+                        },
+                        "options": {
+                            "sling:resourceType": "yamato/components/form/options",
+                            "items": {
+                                "jcr:primaryType": "nt:unstructured",
+                                "item0": {
+                                    "jcr:primaryType": "nt:unstructured",
+                                    "selected": "true",
+                                    "text": "選択してください",
+                                    "value": ""
+                                },
+                                "item1": {
+                                    "jcr:primaryType": "nt:unstructured",
+                                    "text": "製品・ソリューションについて",
+                                    "value": "製品・ソリューションについて"
+                                },
+                                "item2": {
+                                    "jcr:primaryType": "nt:unstructured",
+                                    "disabled": "true",
+                                    "text": "無効",
+                                    "value": "無効"
+                                }
+                            }
                         }
                     }
                 }
