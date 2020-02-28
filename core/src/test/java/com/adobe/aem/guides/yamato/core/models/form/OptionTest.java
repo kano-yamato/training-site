@@ -30,9 +30,9 @@ public class OptionTest {
         ctx.currentResource("/content/yamato/jp/ja/form-page/jcr:content/root/responsivegrid/container/options");
         Option op = ctx.request().adaptTo(Option.class);
         List<OptionItem> expected = new ImmutableList.Builder<OptionItem>()
-                .add(new OptionItemImpl(true, false, "選択してください", ""))
-                .add(new OptionItemImpl(false, false, "製品・ソリューションについて", "製品・ソリューションについて"))
-                .add(new OptionItemImpl(false, true, "無効", "無効")).build();
+                .add(new OptionItem(true, false, "選択してください", ""))
+                .add(new OptionItem(false, false, "製品・ソリューションについて", "製品・ソリューションについて"))
+                .add(new OptionItem(false, true, "無効", "無効")).build();
         List<OptionItem> actual = op.getOptionItems();
         assertIterableEquals(expected, actual);
     }

@@ -35,7 +35,7 @@ public class Option {
         final boolean disabled = resource.getValueMap().get("disabled", false);
         final String text = resource.getValueMap().get("text", "");
         final String value = resource.getValueMap().get("value", "");
-        return new OptionItemImpl(selected, disabled, text, value);
+        return new OptionItem(selected, disabled, text, value);
     }
 
     public List<OptionItem> getOptionItems() {
