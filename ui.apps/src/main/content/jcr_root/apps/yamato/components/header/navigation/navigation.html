@@ -1,0 +1,36 @@
+<div data-sly-use.navi="${ 'com.adobe.aem.guides.yamato.core.models.global.Navigation' }"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+    data-sly-test.hasContent="${ !navi.empty }">
+    <header class="global-header" id="js-global-header">
+        <h1 class="logo">
+            <a href="${ properties.logoUrl }">
+                <img src="${ properties.logoImagePath }" alt="${ properties.logoAlt }">
+            </a>
+        </h1>
+        <nav class="global-nav" id="js-global-nav">
+            <div class="global-nav-inner">
+                <ul class="gnav" data-sly-list.navigation="${ navi.navigations }">
+                    <li data-sly-test.needBalloon="${ navigation.needBalloon }">
+                        <div class="gnav-link-with-trigger">
+                            <a class="contents " href="${ navigation.rootPath }"><span>${ navigation.label }</span></a>
+                            <span class="gnav-child-trigger js-gnav-child-trigger"></span>
+                        </div>
+                        <div class="gnav-child-contents js-gnav-child-contents">
+                            <div class="gnav-child-contents-inner">
+                                <ul class="gnav-child-list" data-sly-list.page="${ navigation.pages }">
+                                    <li class="gnav-child-item">
+                                        <a href="${ page.path }">${ page.title }</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-sly-test="${ !needBalloon }">
+                        <a class="contents " href="${ navigation.rootPath }"><span>${ navigation.label }</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

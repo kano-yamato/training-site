@@ -1,0 +1,80 @@
+{
+    "jp": {
+        "jcr:primaryType": "cq:Page",
+        "ja": {
+            "jcr:primaryType": "cq:Page",
+            "advantage": {
+                "jcr:primaryType": "cq:Page",
+                "jcr:content": {
+                    "jcr:primaryType": "cq:PageContent",
+                    "jcr:title": "私達の特長",
+                    "sling:resourceType": "yamato/components/structure/page"
+                }
+            },
+            "ecm": {
+                "jcr:primaryType": "cq:Page",
+                "jcr:content": {
+                    "jcr:primaryType": "cq:PageContent",
+                    "jcr:title": "ECM事業部",
+                    "sling:resourceType": "yamato/components/structure/page"
+                },
+                "solution": {
+                    "jcr:primaryType": "cq:Page",
+                    "jcr:content": {
+                        "jcr:primaryType": "cq:PageContent",
+                        "jcr:title": "事例・ソリューション",
+                        "sling:resourceType": "yamato/components/structure/page"
+                    }
+                },
+                "case01": {
+                    "jcr:primaryType": "cq:Page",
+                    "jcr:content": {
+                        "jcr:primaryType": "cq:PageContent",
+                        "jcr:title": "事例：図面、SOP管理 エネルギーサービス企業",
+                        "sling:resourceType": "yamato/components/structure/page"
+                    }
+                }
+            },
+            "wcm": {
+                "jcr:primaryType": "cq:Page",
+                "jcr:content": {
+                    "jcr:primaryType": "cq:PageContent",
+                    "jcr:title": "WCM事業部",
+                    "sling:resourceType": "yamato/components/structure/page"
+                },
+                "adobe-training": {
+                    "jcr:primaryType": "cq:Page",
+                    "jcr:content": {
+                        "jcr:primaryType": "cq:PageContent",
+                        "jcr:title": "アドビ公式トレーニング 申し込み",
+                        "sling:resourceType": "yamato/components/structure/page"
+                    }
+                }
+            },
+            "company": {
+                "jcr:primaryType": "cq:Page",
+                "jcr:content": {
+                    "jcr:primaryType": "cq:PageContent",
+                    "jcr:title": "会社情報",
+                    "sling:resourceType": "yamato/components/structure/page"
+                },
+                "philosophy": {
+                    "jcr:primaryType": "cq:Page",
+                    "jcr:content": {
+                        "jcr:primaryType": "cq:PageContent",
+                        "jcr:title": "理念と想い",
+                        "sling:resourceType": "yamato/components/structure/page"
+                    }
+                },
+                "about": {
+                    "jcr:primaryType": "cq:Page",
+                    "jcr:content": {
+                        "jcr:primaryType": "cq:PageContent",
+                        "jcr:title": "代表者経歴",
+                        "sling:resourceType": "yamato/components/structure/page"
+                    }
+                }
+            }
+        }
+    }
+}

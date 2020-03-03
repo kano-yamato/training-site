@@ -1,0 +1,46 @@
+{
+    "header": {
+        "jcr:primaryType": "cq:Page",
+        "master": {
+            "jcr:primaryType": "cq:Page",
+            "jcr:content": {
+                "jcr:primaryType": "cq:PageContent",
+                "jcr:title": "Header",
+                "cq:template": "/conf/yamato/settings/wcm/templates/experience-fragment-web-variation-template",
+                "sling:resourceType": "yamato/components/structure/xfpage",
+                "root": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                    "responsivegrid": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "responsivegrid": {
+                            "jcr:primaryType": "nt:unstructured",
+                            "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                            "navigation": {
+                                "jcr:primaryType": "nt:unstructured",
+                                "sling:resourceType": "yamato/components/header/navigation",
+                                "items": {
+                                    "jcr:primaryType": "nt:unstructured",
+                                    "item0": {
+                                        "jcr:primaryType": "nt:unstructured",
+                                        "naviRoot": "/content/yamato/jp/ja/advantage"
+                                    },
+                                    "item1": {
+                                        "jcr:primaryType": "nt:unstructured",
+                                        "naviRoot": "/content/yamato/jp/ja/ecm",
+                                        "needBalloon": "true"
+                                    },
+                                    "item2": {
+                                        "jcr:primaryType": "nt:unstructured",
+                                        "naviRoot": "/content/yamato/jp/ja/wcm",
+                                        "needBalloon": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
