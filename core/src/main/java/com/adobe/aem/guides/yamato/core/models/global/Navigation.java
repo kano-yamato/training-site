@@ -1,5 +1,9 @@
 package com.adobe.aem.guides.yamato.core.models.global;
 
+import com.adobe.aem.guides.yamato.core.models.global.items.Label;
+import com.adobe.aem.guides.yamato.core.models.global.items.NeedBalloon;
+import com.adobe.aem.guides.yamato.core.models.global.items.Pages;
+import com.adobe.aem.guides.yamato.core.models.global.items.RootPath;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 
@@ -10,6 +14,7 @@ import javax.annotation.PostConstruct;
 
 import org.apache.commons.collections.IteratorUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.adapter.Adaptable;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -38,15 +43,11 @@ public class Navigation {
         }
     }
 
-    @SuppressWarnings("unchecked")
     private NavigationItem generateNavigationItem(Resource resource) {
-        final boolean needBalloon = resource.getValueMap().get("needBalloon", false);
-        final String rootPath = resource.getValueMap().get("naviRoot", "/content/yamato/jp/ja");
         final PageManager pm = resourceResolver.adaptTo(PageManager.class);
-        final Page rootPage = pm.getPage(rootPath);
-        final String label = rootPage.getTitle();
-        final List<Page> pages = IteratorUtils.toList(rootPage.listChildren());
-        return new NavigationItem(needBalloon, rootPath, label, pages);
+        RootPath rootPath = new RootPath(resource);
+        Page rootPage = pm.getPage(rootPath.toString());
+        return new NavigationItem(new NeedBalloon(resource), rootPath, new Label(rootPage), new Pages(rootPage));
     }
 
     public List<NavigationItem> getNavigations() {
