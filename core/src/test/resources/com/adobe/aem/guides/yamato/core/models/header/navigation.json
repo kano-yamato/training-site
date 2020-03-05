@@ -28,12 +28,12 @@
                                     "item1": {
                                         "jcr:primaryType": "nt:unstructured",
                                         "naviRoot": "/content/yamato/jp/ja/ecm",
-                                        "needBalloon": "true"
+                                        "showChild": "true"
                                     },
                                     "item2": {
                                         "jcr:primaryType": "nt:unstructured",
                                         "naviRoot": "/content/yamato/jp/ja/wcm",
-                                        "needBalloon": "true"
+                                        "showChild": "true"
                                     }
                                 }
                             }

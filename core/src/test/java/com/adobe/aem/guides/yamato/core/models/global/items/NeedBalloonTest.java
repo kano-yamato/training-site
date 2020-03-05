@@ -23,17 +23,17 @@ public class NeedBalloonTest {
     @Test
     public void testNeedBalloon_propertiesExists() {
         Resource currentResource = ctx.currentResource("/content/experience-fragments/yamato/jp/ja/site/header/master/jcr:content/root/responsivegrid/responsivegrid/navigation/items/item1/");
-        NeedBalloon needBalloon = new NeedBalloon(currentResource);
+        ShowChild showChild = new ShowChild(currentResource);
         boolean expected = true;
-        assertEquals(expected, needBalloon.value());
+        assertEquals(expected, showChild.value());
     }
 
     @Test
     public void testNeedBalloon_propertiesNotExists() {
         Resource currentResource = ctx.currentResource("/content/experience-fragments/yamato/jp/ja/site/header/master/jcr:content/root/responsivegrid/responsivegrid/navigation/items/item0/");
-        NeedBalloon needBalloon = new NeedBalloon(currentResource);
+        ShowChild showChild = new ShowChild(currentResource);
         boolean expected = false;
-        assertEquals(expected, needBalloon.value());
+        assertEquals(expected, showChild.value());
     }
 }
 

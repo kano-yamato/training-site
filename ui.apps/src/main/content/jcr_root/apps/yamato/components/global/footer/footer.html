@@ -1,0 +1,32 @@
+<div data-sly-use.navi="${ 'com.adobe.aem.guides.yamato.core.models.global.Footer' }"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+    data-sly-test.hasContent="${ !navi.empty }">
+    <footer class="global-footer">
+        <div class="global-footer-inner">
+            <div class="logo logo-pc">
+                <a href="${ properties.logoUrl }">
+                    <img src="${ properties.logoImagePath }" alt="${ properties.logoAlt }">
+                </a>
+            </div>
+            <div data-sly-list.navigation="${ navi.footerNavigations }" class="global-footer-nav">
+                <div data-sly-list="${ navigation }" class="global-footer-nav-column">
+                    <div data-sly-test.showChild="${ item.showChild }" class="global-footer-nav-item">
+                        <div class="global-footer-nav-link-with-trigger">
+                            <a href="${ item.rootPath }" class="global-footer-nav-link">${ item.label }</a>
+                            <span class="global-footer-nav-child-trigger js-global-footer-nav-child-trigger"></span>
+                        </div>
+                        <div data-sly-list.page="${ item.pages }" class="global-footer-nav-children">
+                            <div class="global-footer-nav-child-item">
+                                <a href="${ page.path }">${ page.title }</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-sly-test="${ !showChild }" class="global-footer-nav-item">
+                        <a href="${ item.rootPath }" class="global-footer-nav-link">${ item.label }</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

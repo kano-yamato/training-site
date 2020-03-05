@@ -1,4 +1,4 @@
-<div data-sly-use.navi="${ 'com.adobe.aem.guides.yamato.core.models.global.Navigation' }"
+<div data-sly-use.navi="${ 'com.adobe.aem.guides.yamato.core.models.global.Header' }"
     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
     data-sly-test.hasContent="${ !navi.empty }">
     <header class="global-header" id="js-global-header">
@@ -10,7 +10,7 @@
         <nav class="global-nav" id="js-global-nav">
             <div class="global-nav-inner">
                 <ul class="gnav" data-sly-list.navigation="${ navi.navigations }">
-                    <li data-sly-test.needBalloon="${ navigation.needBalloon }">
+                    <li data-sly-test.showChild="${ navigation.showChild }">
                         <div class="gnav-link-with-trigger">
                             <a class="contents " href="${ navigation.rootPath }"><span>${ navigation.label }</span></a>
                             <span class="gnav-child-trigger js-gnav-child-trigger"></span>
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                     </li>
-                    <li data-sly-test="${ !needBalloon }">
+                    <li data-sly-test="${ !showChild }">
                         <a class="contents " href="${ navigation.rootPath }"><span>${ navigation.label }</span></a>
                     </li>
                 </ul>

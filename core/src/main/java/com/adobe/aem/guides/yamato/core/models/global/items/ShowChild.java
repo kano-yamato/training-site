@@ -2,11 +2,11 @@ package com.adobe.aem.guides.yamato.core.models.global.items;
 
 import org.apache.sling.api.resource.Resource;
 
-public class NeedBalloon {
+public class ShowChild {
     private final boolean _needBalloon;
 
-    public NeedBalloon(Resource resource) {
-        _needBalloon = resource.getValueMap().get("needBalloon", false);
+    public ShowChild(Resource resource) {
+        _needBalloon = resource.getValueMap().get("showChild", false);
     }
 
     public boolean value() {

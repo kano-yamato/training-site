@@ -38,6 +38,7 @@
                                                 fieldDescription="ロゴ画像のリンク先"
                                                 fieldLabel="ロゴURL"
                                                 name="./logoUrl"
+                                                rootPath="/content/yamato"
                                                 required="{Boolean}true"/>
                                             <logoImage
                                                 jcr:primaryType="nt:unstructured"
@@ -63,19 +64,18 @@
                                                     name="./items">
                                                     <items jcr:primaryType="nt:unstructured">
                                                         <naviRoot
-                                                            defaultValue="/content/yamato/jp/ja"
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                            defaultValue="/content/yamato/jp/ja"
                                                             fieldDescription="各ナビゲーションのルートパス"
                                                             fieldLabel="ナビルート"
                                                             name="./naviRoot"
                                                             rootPath="/content/yamato/"/>
-                                                        <needBalloon
+                                                        <showChild
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                                                            fieldLabel="バルーンを出す"
-                                                            name="./needBalloon"
-                                                            text="バルーンを出す"
+                                                            name="./showChild"
+                                                            text="子ページを表示する"
                                                             value="{Boolean}true"/>
                                                     </items>
                                                 </field>
