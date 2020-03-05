@@ -2,6 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        cq:lastModified="{Date}2020-03-02T16:40:44.156+09:00"
+        cq:lastModifiedBy="admin"
         cq:tags="[]"
         cq:template="/conf/yamato/settings/wcm/templates/experience-fragment-web-variation-template"
         cq:xfMasterVariation="{Boolean}true"
@@ -37,6 +39,13 @@
                                 width="6"/>
                         </cq:responsive>
                     </languagenavigation>
+                    <navigation
+                        jcr:created="{Date}2020-03-02T16:40:44.067+09:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2020-03-02T16:40:44.067+09:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="yamato/components/header/navigation"/>
                 </responsivegrid>
                 <responsivegrid_1195249223
                     jcr:primaryType="nt:unstructured"
