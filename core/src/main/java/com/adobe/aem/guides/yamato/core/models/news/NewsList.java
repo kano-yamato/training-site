@@ -16,14 +16,13 @@ import com.google.common.collect.ImmutableMap;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.commons.collections4.IteratorUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.apache.sling.models.annotations.Model;
 
 @Model(
@@ -31,7 +30,6 @@ import org.apache.sling.models.annotations.Model;
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class NewsList {
-    private static final Logger LOG = LoggerFactory.getLogger(NewsList.class);
     @SlingObject
     private ResourceResolver resourceResolver;
 
@@ -58,13 +56,16 @@ public class NewsList {
     public void init() {
         final PageManager pm = resourceResolver.adaptTo(PageManager.class);
         final Page rootPage = pm.getPage(rootPath);
-        Iterator<Page> children = rootPage.listChildren(createPageFilter());
-        while (children.hasNext()) {
-            final Page child = children.next();
-            articlePages.add(generateArticlePage(child));
-        }
+        // listChildren()の戻り値は、createPageFilter()で作成されたPageFilterオブジェクトによって決まる
+        Iterator<Page> children = rootPage == null ? IteratorUtils.emptyIterator() : rootPage.listChildren(createPageFilter());
+        IteratorUtils.asIterable(children).forEach(child -> articlePages.add(generateArticlePage(child)));
     }
 
+    /**
+     * PageオブジェクトからArticlePageオブジェクトを生成するメソッド
+     * @param page 記事ページ
+     * @return ArticlePageオブジェクト
+     */
     private ArticlePage generateArticlePage(final Page page) {
         final ValueMap articleProperties = page.getContentResource("root/responsivegrid/article").getValueMap();
         final Date date = articleProperties.get("date", new Date());
@@ -75,15 +76,26 @@ public class NewsList {
         return new ArticlePage(date, title, path, category, categoryDisplayName);
     }
 
+    /**
+     * page.listChildren()メソッドの引数となるPageFilterを生成するメソッド
+     * page.listChildren(pageFilter)が返すページ群は以下のルールで決定される
+     * ・currentPageのjcr:titleが「ニュース・コラム」の場合、全てのニュース記事ページが対象となる
+     * ・currentPageのjcr:titleが「お知らせ」の場合、記事コンポーネントのcategoryプロパティがinfoのページが検索対象となる
+     * ・currentPageのjcr:titleが「製品・サービス」の場合、記事コンポーネントのcategoryプロパティがproductsのページが検索対象となる
+     * ・currentpageのjcr:titleが「コラム」の場合、記事コンポーネントのcategoryプロパティがcolumnsのページが検索対象となる
+     * @return page.listChildren()が返すイテレータを絞り込むためのPageFilterオブジェクト
+     */
     private PageFilter createPageFilter() {
         return new PageFilter() {
             @Override
             public boolean includes(final Page page) {
                 final String currentCategory = titleToCategory.getOrDefault(currentPage.getTitle(), "all");
+                // pageが記事ページでない場合、root/responsivegrid/articleノードが存在しないため、getContentResource()がnullを返す。
+                // その場合、childResource.getValueMap()でNPEを送出するため、その前にfalseを返却する
                 final Resource childResource = page.getContentResource("root/responsivegrid/article");
                 if (childResource == null) return false;
                 final String childCategory = childResource.getValueMap().get("category", "all");
-                return childCategory.equals(currentCategory) || StringUtils.equals("all", currentCategory);
+                return StringUtils.equals(childCategory, currentCategory) || StringUtils.equals("all", currentCategory);
             }
         };
     }
