@@ -1,0 +1,27 @@
+<div data-sly-use.newsList="${ 'com.adobe.aem.guides.yamato.core.models.news.NewsList' }"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+    data-sly-test.hasContent="${ !newsList.empty }">
+    <section class="news-section01">
+        <div class="inner">
+            <div class="news-section01-nav">
+                <ul>
+                    <li><span class="is-current">ALL</span></li>
+                    <li><a href="/content/yamato/jp/ja/news/category/info">お知らせ</a></li>
+                    <li><a href="/content/yamato/jp/ja/news/category/products">製品・サービス</a></li>
+                    <li><a href="/content/yamato/jp/ja/news/category/columns">コラム</a></li>
+                </ul>
+            </div>
+            <div data-sly-list.article="${ newsList.articlePages }" class="news-section01-list">
+                <article class="news-section01-item">
+                    <span class="link"><time class="date">${ 'yyyy.MM.dd' @ format=article.date }</time>
+                        <div class="category"><span class="category-icon category-icon-${ article.category }">${ article.categoryDisplayName }</span></div>
+                        <div class="title"><a href="${ article.path }"
+                                target="_blank" rel="noopener noreferrer">${ article.title }</a>
+                        </div>
+                    </span>
+                </article>
+            </div>
+        </div>
+    </section>
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

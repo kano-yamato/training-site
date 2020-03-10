@@ -1,0 +1,263 @@
+{
+    "news": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Fri Mar 06 2020 10:53:13 GMT+0900",
+        "jcr:content": {
+            "jcr:primaryType": "cq:PageContent",
+            "jcr:createdBy": "admin",
+            "jcr:title": "ニュース・コラム",
+            "cq:template": "/conf/yamato/settings/wcm/templates/news-page",
+            "jcr:created": "Fri Mar 06 2020 10:53:13 GMT+0900",
+            "cq:lastModified": "Fri Mar 06 2020 14:10:15 GMT+0900",
+            "sling:resourceType": "yamato/components/structure/page",
+            "cq:lastModifiedBy": "admin",
+            "root": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                "responsivegrid": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "jcr:lastModifiedBy": "admin",
+                    "jcr:lastModified": "Fri Mar 06 2020 10:46:04 GMT+0900",
+                    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                    "list": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "jcr:createdBy": "admin",
+                        "jcr:lastModifiedBy": "admin",
+                        "jcr:created": "Fri Mar 06 2020 10:46:07 GMT+0900",
+                        "rootPath": "/content/yamato/jp/ja/news",
+                        "jcr:lastModified": "Fri Mar 06 2020 14:10:15 GMT+0900",
+                        "sling:resourceType": "yamato/components/news/list"
+                    }
+                }
+            }
+        },
+        "20200131-1502": {
+            "jcr:primaryType": "cq:Page",
+            "jcr:createdBy": "admin",
+            "jcr:created": "Fri Mar 06 2020 11:58:04 GMT+0900",
+            "jcr:content": {
+                "jcr:primaryType": "cq:PageContent",
+                "jcr:createdBy": "admin",
+                "jcr:title": "第1回 CARA ハンズオン会のご報告",
+                "cq:template": "/conf/yamato/settings/wcm/templates/news-article-page",
+                "jcr:created": "Fri Mar 06 2020 11:58:04 GMT+0900",
+                "cq:lastModified": "Fri Mar 06 2020 12:16:33 GMT+0900",
+                "sling:resourceType": "yamato/components/structure/page",
+                "cq:lastModifiedBy": "admin",
+                "root": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                    "responsivegrid": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "jcr:lastModifiedBy": "admin",
+                        "jcr:lastModified": "Fri Mar 06 2020 11:53:05 GMT+0900",
+                        "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                        "article": {
+                            "jcr:primaryType": "nt:unstructured",
+                            "jcr:createdBy": "admin",
+                            "jcr:lastModifiedBy": "admin",
+                            "jcr:created": "Fri Mar 06 2020 11:53:08 GMT+0900",
+                            "date": "Thu Mar 05 2020 00:00:00 GMT+0900",
+                            "category": "products",
+                            "jcr:lastModified": "Fri Mar 06 2020 12:16:33 GMT+0900",
+                            "sling:resourceType": "yamato/components/news/article"
+                        }
+                    }
+                }
+            }
+        },
+        "category": {
+            "jcr:primaryType": "cq:Page",
+            "jcr:createdBy": "admin",
+            "jcr:created": "Fri Mar 06 2020 12:14:07 GMT+0900",
+            "jcr:content": {
+                "jcr:primaryType": "cq:PageContent",
+                "jcr:createdBy": "admin",
+                "jcr:title": "category",
+                "cq:template": "/conf/yamato/settings/wcm/templates/content-page-template",
+                "jcr:created": "Fri Mar 06 2020 12:14:07 GMT+0900",
+                "cq:lastModified": "Fri Mar 06 2020 12:14:07 GMT+0900",
+                "sling:resourceType": "yamato/components/structure/page",
+                "cq:lastModifiedBy": "admin",
+                "root": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                    "responsivegrid": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "sling:resourceType": "wcm/foundation/components/responsivegrid"
+                    }
+                }
+            },
+            "info": {
+                "jcr:primaryType": "cq:Page",
+                "jcr:createdBy": "admin",
+                "jcr:created": "Fri Mar 06 2020 12:14:35 GMT+0900",
+                "jcr:content": {
+                    "jcr:primaryType": "cq:PageContent",
+                    "jcr:createdBy": "admin",
+                    "jcr:title": "お知らせ",
+                    "cq:template": "/conf/yamato/settings/wcm/templates/news-page",
+                    "jcr:created": "Fri Mar 06 2020 12:14:35 GMT+0900",
+                    "cq:lastModified": "Fri Mar 06 2020 12:14:35 GMT+0900",
+                    "sling:resourceType": "yamato/components/structure/page",
+                    "cq:lastModifiedBy": "admin",
+                    "root": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                        "responsivegrid": {
+                            "jcr:primaryType": "nt:unstructured",
+                            "jcr:lastModifiedBy": "admin",
+                            "jcr:lastModified": "Fri Mar 06 2020 10:46:04 GMT+0900",
+                            "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                            "list": {
+                                "jcr:primaryType": "nt:unstructured",
+                                "jcr:createdBy": "admin",
+                                "jcr:lastModifiedBy": "admin",
+                                "jcr:created": "Fri Mar 06 2020 10:46:07 GMT+0900",
+                                "jcr:lastModified": "Fri Mar 06 2020 10:52:52 GMT+0900",
+                                "sling:resourceType": "yamato/components/news/list"
+                            }
+                        }
+                    }
+                }
+            },
+            "products": {
+                "jcr:primaryType": "cq:Page",
+                "jcr:createdBy": "admin",
+                "jcr:created": "Fri Mar 06 2020 12:14:55 GMT+0900",
+                "jcr:content": {
+                    "jcr:primaryType": "cq:PageContent",
+                    "jcr:createdBy": "admin",
+                    "jcr:title": "製品・サービス",
+                    "cq:template": "/conf/yamato/settings/wcm/templates/news-page",
+                    "jcr:created": "Fri Mar 06 2020 12:14:55 GMT+0900",
+                    "cq:lastModified": "Fri Mar 06 2020 12:14:55 GMT+0900",
+                    "sling:resourceType": "yamato/components/structure/page",
+                    "cq:lastModifiedBy": "admin",
+                    "root": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                        "responsivegrid": {
+                            "jcr:primaryType": "nt:unstructured",
+                            "jcr:lastModifiedBy": "admin",
+                            "jcr:lastModified": "Fri Mar 06 2020 10:46:04 GMT+0900",
+                            "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                            "list": {
+                                "jcr:primaryType": "nt:unstructured",
+                                "jcr:createdBy": "admin",
+                                "jcr:lastModifiedBy": "admin",
+                                "jcr:created": "Fri Mar 06 2020 10:46:07 GMT+0900",
+                                "jcr:lastModified": "Fri Mar 06 2020 10:52:52 GMT+0900",
+                                "sling:resourceType": "yamato/components/news/list"
+                            }
+                        }
+                    }
+                }
+            },
+            "columns": {
+                "jcr:primaryType": "cq:Page",
+                "jcr:createdBy": "admin",
+                "jcr:created": "Fri Mar 06 2020 12:15:17 GMT+0900",
+                "jcr:content": {
+                    "jcr:primaryType": "cq:PageContent",
+                    "jcr:createdBy": "admin",
+                    "jcr:title": "コラム",
+                    "cq:template": "/conf/yamato/settings/wcm/templates/news-page",
+                    "jcr:created": "Fri Mar 06 2020 12:15:17 GMT+0900",
+                    "cq:lastModified": "Fri Mar 06 2020 12:15:17 GMT+0900",
+                    "sling:resourceType": "yamato/components/structure/page",
+                    "cq:lastModifiedBy": "admin",
+                    "root": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                        "responsivegrid": {
+                            "jcr:primaryType": "nt:unstructured",
+                            "jcr:lastModifiedBy": "admin",
+                            "jcr:lastModified": "Fri Mar 06 2020 10:46:04 GMT+0900",
+                            "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                            "list": {
+                                "jcr:primaryType": "nt:unstructured",
+                                "jcr:createdBy": "admin",
+                                "jcr:lastModifiedBy": "admin",
+                                "jcr:created": "Fri Mar 06 2020 10:46:07 GMT+0900",
+                                "jcr:lastModified": "Fri Mar 06 2020 10:52:52 GMT+0900",
+                                "sling:resourceType": "yamato/components/news/list"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "20200101-721": {
+            "jcr:primaryType": "cq:Page",
+            "jcr:createdBy": "admin",
+            "jcr:created": "Fri Mar 06 2020 12:15:53 GMT+0900",
+            "jcr:content": {
+                "jcr:primaryType": "cq:PageContent",
+                "jcr:createdBy": "admin",
+                "jcr:title": "2020年　年頭のご挨拶",
+                "cq:template": "/conf/yamato/settings/wcm/templates/news-article-page",
+                "jcr:created": "Fri Mar 06 2020 12:15:53 GMT+0900",
+                "cq:lastModified": "Fri Mar 06 2020 12:16:13 GMT+0900",
+                "sling:resourceType": "yamato/components/structure/page",
+                "cq:lastModifiedBy": "admin",
+                "root": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                    "responsivegrid": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "jcr:lastModifiedBy": "admin",
+                        "jcr:lastModified": "Fri Mar 06 2020 12:02:12 GMT+0900",
+                        "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                        "article": {
+                            "jcr:primaryType": "nt:unstructured",
+                            "jcr:createdBy": "admin",
+                            "jcr:lastModifiedBy": "admin",
+                            "jcr:created": "Fri Mar 06 2020 11:53:08 GMT+0900",
+                            "date": "Wed Jan 01 2020 00:00:00 GMT+0900",
+                            "category": "info",
+                            "jcr:lastModified": "Fri Mar 06 2020 12:16:13 GMT+0900",
+                            "sling:resourceType": "yamato/components/news/article"
+                        }
+                    }
+                }
+            }
+        },
+        "20200103-731": {
+            "jcr:primaryType": "cq:Page",
+            "jcr:createdBy": "admin",
+            "jcr:created": "Fri Mar 06 2020 12:23:49 GMT+0900",
+            "jcr:content": {
+                "jcr:primaryType": "cq:PageContent",
+                "jcr:createdBy": "admin",
+                "jcr:title": "コラム",
+                "cq:template": "/conf/yamato/settings/wcm/templates/news-article-page",
+                "jcr:created": "Fri Mar 06 2020 12:23:49 GMT+0900",
+                "cq:lastModified": "Fri Mar 06 2020 12:24:22 GMT+0900",
+                "sling:resourceType": "yamato/components/structure/page",
+                "cq:lastModifiedBy": "admin",
+                "root": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                    "responsivegrid": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "jcr:lastModifiedBy": "admin",
+                        "jcr:lastModified": "Fri Mar 06 2020 12:02:12 GMT+0900",
+                        "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                        "article": {
+                            "jcr:primaryType": "nt:unstructured",
+                            "jcr:createdBy": "admin",
+                            "jcr:lastModifiedBy": "admin",
+                            "jcr:created": "Fri Mar 06 2020 11:53:08 GMT+0900",
+                            "date": "Tue Feb 04 2020 00:00:00 GMT+0900",
+                            "category": "columns",
+                            "jcr:lastModified": "Fri Mar 06 2020 12:24:22 GMT+0900",
+                            "sling:resourceType": "yamato/components/news/article"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
