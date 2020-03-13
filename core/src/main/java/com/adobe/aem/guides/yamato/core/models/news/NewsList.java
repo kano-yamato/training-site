@@ -1,10 +1,12 @@
 package com.adobe.aem.guides.yamato.core.models.news;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
@@ -58,7 +60,10 @@ public class NewsList {
         final Page rootPage = pm.getPage(rootPath);
         // listChildren()の戻り値は、createPageFilter()で作成されたPageFilterオブジェクトによって決まる
         Iterator<Page> children = rootPage == null ? IteratorUtils.emptyIterator() : rootPage.listChildren(createPageFilter());
-        IteratorUtils.asIterable(children).forEach(child -> articlePages.add(generateArticlePage(child)));
+        List<Page> sortedChildren = IteratorUtils.toList(children).stream().sorted(
+            Comparator.comparing(Page::getLastModified).reversed()
+        ).collect(Collectors.toList());
+        sortedChildren.forEach(child -> articlePages.add(generateArticlePage(child)));
     }
 
     /**
@@ -68,12 +73,11 @@ public class NewsList {
      */
     private ArticlePage generateArticlePage(final Page page) {
         final ValueMap articleProperties = page.getContentResource("root/responsivegrid/article").getValueMap();
-        final Date date = articleProperties.get("date", new Date());
         final String title = page.getTitle();
         final String path = page.getPath();
         final String category = articleProperties.get("category", "all");
         final String categoryDisplayName = categoryToDisplayName.get(category);
-        return new ArticlePage(date, title, path, category, categoryDisplayName);
+        return new ArticlePage(page.getLastModified().getTime(), title, path, category, categoryDisplayName);
     }
 
     /**

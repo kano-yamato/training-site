@@ -22,13 +22,6 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <date
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/datepicker"
-                                        fieldLabel="記事日付"
-                                        name="./date"
-                                        required="{Boolean}true"
-                                        valueFormat="YYYY.MM.DD"/>
                                     <category
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
