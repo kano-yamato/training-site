@@ -1,0 +1,23 @@
+{
+    "current-page": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+            "jcr:primaryType": "cq:PageContent",
+            "jcr:title": "current-page",
+            "root": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                "responsivegrid": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                    "heroimage": {
+                        "title": "タイトル",
+                        "caption": "概要",
+                        "buttonLabel": "ボタンラベル",
+                        "buttonLinkURL": "/yamato/test-page"
+                    }
+                }
+            }
+        }
+    }
+}

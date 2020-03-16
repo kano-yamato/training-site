@@ -24,7 +24,7 @@ public class Hero  {
     private String buttonLabel;
 
     @ValueMapValue
-    private String butttonLinkURL;
+    private String buttonLinkURL;
 
 
     public String getTitle() {
@@ -40,6 +40,6 @@ public class Hero  {
     }
 
     public String getButtonLinkURL() {
-        return this.butttonLinkURL;
+        return this.buttonLinkURL;
     }
 }
