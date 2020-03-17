@@ -45,7 +45,7 @@ public class Pager {
     public void init() {
         int pagerCount = (int) Math.ceil((double) articlesSize / ARTICLE_DISPLAY_COUNT);
         for (int i = 1; i <= pagerCount; i++) {
-            pagerLinks.add(new PagerLink(pagerCount, currentPageNumber(), i));
+            pagerLinks.add(new PagerLink(currentPageNumber(), i));
         }
         preview = new Preview(currentPageNumber());
         next = new Next(currentPageNumber(), pagerCount);

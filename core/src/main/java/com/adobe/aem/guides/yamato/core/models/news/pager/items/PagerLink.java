@@ -5,7 +5,7 @@ public class PagerLink {
     private final String path_;
     private final int count_;
 
-    public PagerLink(int pagerCount, int currentPageNumber, int count) {
+    public PagerLink(int currentPageNumber, int count) {
         count_ = count;
         tag_ = (currentPageNumber == count) ? "span" : "a";
         path_ = "/content/yamato/jp/ja/news." + String.valueOf(count) + ".html";
