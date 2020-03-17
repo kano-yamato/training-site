@@ -1,0 +1,25 @@
+<sly data-sly-use.image="${ 'com.adobe.cq.wcm.core.components.models.Image' }"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test="${image.src}">
+    <div class="home-hero-item-contents">
+        <img src="${image.src}" alt="${image.alt || true}" title="${image.displayPopupTitle && image.title}" />
+        <div class="home-hero-item-contents js-first-item-contents">
+            <div class="home-hero-item-contents-inner">
+                <p class="home-hero-item-contents-title">
+                    ${properties.title}
+                </p>
+                <div class="home-hero-item-contents-text">
+                    <p>
+                        ${properties.caption}
+                    </p>
+                </div>
+                <div class="home-hero-item-contents-button">
+                    <a href="${properties.butttonLinkURL}.html" class="button button-icon button-right-arrow">
+                        ${properties.buttonLabel}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !image.src, classAppend = 'cq-dd-image'}"></sly>
