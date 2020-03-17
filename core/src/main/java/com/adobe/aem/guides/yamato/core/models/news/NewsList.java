@@ -2,7 +2,6 @@ package com.adobe.aem.guides.yamato.core.models.news;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
