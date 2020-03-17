@@ -71,7 +71,7 @@ public class NewsList {
      * @return ArticlePageオブジェクト
      */
     private ArticlePage generateArticlePage(final Page page) {
-        final ValueMap articleProperties = page.getContentResource("root/responsivegrid/article").getValueMap();
+        final ValueMap articleProperties = page.getContentResource("root/responsivegrid/newsarticle").getValueMap();
         final String title = page.getTitle();
         final String path = page.getPath();
         final String category = articleProperties.get("category", "all");
@@ -93,9 +93,9 @@ public class NewsList {
             @Override
             public boolean includes(final Page page) {
                 final String currentCategory = titleToCategory.getOrDefault(currentPage.getTitle(), "all");
-                // pageが記事ページでない場合、root/responsivegrid/articleノードが存在しないため、getContentResource()がnullを返す。
+                // pageが記事ページでない場合、root/responsivegrid/newsarticleノードが存在しないため、getContentResource()がnullを返す。
                 // その場合、childResource.getValueMap()でNPEを送出するため、その前にfalseを返却する
-                final Resource childResource = page.getContentResource("root/responsivegrid/article");
+                final Resource childResource = page.getContentResource("root/responsivegrid/newsarticle");
                 if (childResource == null) return false;
                 final String childCategory = childResource.getValueMap().get("category", "all");
                 return StringUtils.equals(childCategory, currentCategory) || StringUtils.equals("all", currentCategory);

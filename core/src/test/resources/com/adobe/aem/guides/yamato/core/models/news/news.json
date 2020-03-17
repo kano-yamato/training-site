@@ -27,7 +27,7 @@
                         "jcr:created": "Fri Mar 06 2020 10:46:07 GMT+0900",
                         "rootPath": "/content/yamato/jp/ja/news",
                         "jcr:lastModified": "Fri Mar 06 2020 14:10:15 GMT+0900",
-                        "sling:resourceType": "yamato/components/news/list"
+                        "sling:resourceType": "yamato/components/structure/newslist"
                     }
                 }
             }
@@ -53,14 +53,14 @@
                         "jcr:lastModifiedBy": "admin",
                         "jcr:lastModified": "Fri Mar 06 2020 11:53:05 GMT+0900",
                         "sling:resourceType": "wcm/foundation/components/responsivegrid",
-                        "article": {
+                        "newsarticle": {
                             "jcr:primaryType": "nt:unstructured",
                             "jcr:createdBy": "admin",
                             "jcr:lastModifiedBy": "admin",
                             "jcr:created": "Fri Mar 06 2020 11:53:08 GMT+0900",
                             "category": "products",
                             "jcr:lastModified": "Fri Mar 06 2020 12:16:33 GMT+0900",
-                            "sling:resourceType": "yamato/components/news/article"
+                            "sling:resourceType": "yamato/components/structure/newsarticle"
                         }
                     }
                 }
@@ -115,7 +115,7 @@
                                 "jcr:lastModifiedBy": "admin",
                                 "jcr:created": "Fri Mar 06 2020 10:46:07 GMT+0900",
                                 "jcr:lastModified": "Fri Mar 06 2020 10:52:52 GMT+0900",
-                                "sling:resourceType": "yamato/components/news/list"
+                                "sling:resourceType": "yamato/components/structure/newslist"
                             }
                         }
                     }
@@ -148,7 +148,7 @@
                                 "jcr:lastModifiedBy": "admin",
                                 "jcr:created": "Fri Mar 06 2020 10:46:07 GMT+0900",
                                 "jcr:lastModified": "Fri Mar 06 2020 10:52:52 GMT+0900",
-                                "sling:resourceType": "yamato/components/news/list"
+                                "sling:resourceType": "yamato/components/structure/newslist"
                             }
                         }
                     }
@@ -181,7 +181,7 @@
                                 "jcr:lastModifiedBy": "admin",
                                 "jcr:created": "Fri Mar 06 2020 10:46:07 GMT+0900",
                                 "jcr:lastModified": "Fri Mar 06 2020 10:52:52 GMT+0900",
-                                "sling:resourceType": "yamato/components/news/list"
+                                "sling:resourceType": "yamato/components/structure/newslist"
                             }
                         }
                     }
@@ -209,14 +209,14 @@
                         "jcr:lastModifiedBy": "admin",
                         "jcr:lastModified": "Fri Mar 06 2020 12:02:12 GMT+0900",
                         "sling:resourceType": "wcm/foundation/components/responsivegrid",
-                        "article": {
+                        "newsarticle": {
                             "jcr:primaryType": "nt:unstructured",
                             "jcr:createdBy": "admin",
                             "jcr:lastModifiedBy": "admin",
                             "jcr:created": "Fri Mar 06 2020 11:53:08 GMT+0900",
                             "category": "info",
                             "jcr:lastModified": "Fri Mar 06 2020 12:16:13 GMT+0900",
-                            "sling:resourceType": "yamato/components/news/article"
+                            "sling:resourceType": "yamato/components/structure/newsarticle"
                         }
                     }
                 }
@@ -243,14 +243,14 @@
                         "jcr:lastModifiedBy": "admin",
                         "jcr:lastModified": "Fri Mar 06 2020 12:02:12 GMT+0900",
                         "sling:resourceType": "wcm/foundation/components/responsivegrid",
-                        "article": {
+                        "newsarticle": {
                             "jcr:primaryType": "nt:unstructured",
                             "jcr:createdBy": "admin",
                             "jcr:lastModifiedBy": "admin",
                             "jcr:created": "Fri Mar 06 2020 11:53:08 GMT+0900",
                             "category": "columns",
                             "jcr:lastModified": "Fri Mar 06 2020 12:24:22 GMT+0900",
-                            "sling:resourceType": "yamato/components/news/article"
+                            "sling:resourceType": "yamato/components/structure/newsarticle"
                         }
                     }
                 }

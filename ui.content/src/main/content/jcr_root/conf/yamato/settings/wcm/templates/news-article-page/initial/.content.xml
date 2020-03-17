@@ -13,13 +13,13 @@
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid">
-                <article
+                <newsarticle
                     jcr:created="{Date}2020-03-06T11:53:08.713+09:00"
                     jcr:createdBy="admin"
                     jcr:lastModified="{Date}2020-03-06T12:02:37.017+09:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="yamato/components/news/article"/>
+                    sling:resourceType="yamato/components/structure/newsarticle"/>
             </responsivegrid>
         </root>
     </jcr:content>
