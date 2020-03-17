@@ -1,6 +1,7 @@
 <div data-sly-use.newsList="${ 'com.adobe.aem.guides.yamato.core.models.news.NewsList' }"
     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
     data-sly-test.hasContent="${ !newsList.empty }">
+    <sly data-sly-use.pager="${ 'com.adobe.aem.guides.yamato.core.models.news.pager.Pager' @ articlesSize=newsList.articlePages.size }"></sly>
     <section class="news-section01">
         <div class="inner">
             <div class="news-section01-nav">
@@ -11,7 +12,7 @@
                     <li><a href="/content/yamato/jp/ja/news/category/columns">コラム</a></li>
                 </ul>
             </div>
-            <div data-sly-list.article="${ newsList.articlePages }" class="news-section01-list">
+            <div data-sly-list.article="${ newsList.articlePages @ begin=pager.begin, end=pager.end }" class="news-section01-list">
                 <article class="news-section01-item">
                     <span class="link"><time class="date">${ 'yyyy.MM.dd' @ format=article.date }</time>
                         <div class="category"><span class="category-icon category-icon-${ article.category }">${ article.categoryDisplayName }</span></div>
@@ -22,6 +23,14 @@
                 </article>
             </div>
         </div>
+        <a href="${ pager.prevPath }" data-sly-test="${ pager.hasPrev }" class="previouspostslink" rel="prev">PREV</a>
+        <div data-sly-list.pagerLink="${ pager.pagerLinks }" class="wp-pagenavi" role="navigation">
+            <div href="${ pagerLink.path }"
+                title="Page ${ pagerLink.count }" data-sly-element="${ pagerLink.tag }">
+                ${ pagerLink.count }
+            </div>
+        </div>
+        <a href="${ pager.nextPath }" data-sly-test="${ pager.hasNext }" class="nextpostslink" rel="next">NEXT</a>
     </section>
 </div>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
