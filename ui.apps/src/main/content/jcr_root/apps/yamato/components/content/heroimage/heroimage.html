@@ -1,5 +1,4 @@
 <sly data-sly-use.image="${ 'com.adobe.cq.wcm.core.components.models.Image' }"
-     data-sly-use.hero="${ 'com.adobe.aem.guides.yamato.core.models.content.Hero' }"
      data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
      data-sly-test="${image.src}">
     <div class="home-hero-item-contents">
@@ -7,16 +6,16 @@
         <div class="home-hero-item-contents js-first-item-contents">
             <div class="home-hero-item-contents-inner">
                 <p class="home-hero-item-contents-title">
-                    ${hero.title}
+                    ${properties.title}
                 </p>
                 <div class="home-hero-item-contents-text">
                     <p>
-                        ${hero.caption}
+                        ${properties.caption}
                     </p>
                 </div>
                 <div class="home-hero-item-contents-button">
-                    <a href="${hero.butttonLinkURL}.html" class="button button-icon button-right-arrow">
-                        ${hero.buttonLabel}
+                    <a href="${properties.butttonLinkURL}.html" class="button button-icon button-right-arrow">
+                        ${properties.buttonLabel}
                     </a>
                 </div>
             </div>
