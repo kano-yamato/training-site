@@ -58,7 +58,6 @@
                             "jcr:createdBy": "admin",
                             "jcr:lastModifiedBy": "admin",
                             "jcr:created": "Fri Mar 06 2020 11:53:08 GMT+0900",
-                            "date": "Thu Mar 05 2020 00:00:00 GMT+0900",
                             "category": "products",
                             "jcr:lastModified": "Fri Mar 06 2020 12:16:33 GMT+0900",
                             "sling:resourceType": "yamato/components/news/article"
@@ -215,7 +214,6 @@
                             "jcr:createdBy": "admin",
                             "jcr:lastModifiedBy": "admin",
                             "jcr:created": "Fri Mar 06 2020 11:53:08 GMT+0900",
-                            "date": "Wed Jan 01 2020 00:00:00 GMT+0900",
                             "category": "info",
                             "jcr:lastModified": "Fri Mar 06 2020 12:16:13 GMT+0900",
                             "sling:resourceType": "yamato/components/news/article"
@@ -250,7 +248,6 @@
                             "jcr:createdBy": "admin",
                             "jcr:lastModifiedBy": "admin",
                             "jcr:created": "Fri Mar 06 2020 11:53:08 GMT+0900",
-                            "date": "Tue Feb 04 2020 00:00:00 GMT+0900",
                             "category": "columns",
                             "jcr:lastModified": "Fri Mar 06 2020 12:24:22 GMT+0900",
                             "sling:resourceType": "yamato/components/news/article"

@@ -30,9 +30,10 @@ public class NewsListTest {
         ctx.currentResource("/content/yamato/jp/ja/news/jcr:content/root/responsivegrid/list");
         NewsList nw = ctx.request().adaptTo(NewsList.class);
         List<ArticlePage> expected = new ImmutableList.Builder<ArticlePage>()
-                .add(new ArticlePage(new GregorianCalendar(2020, 2, 5).getTime(), "第1回 CARA ハンズオン会のご報告", "/content/yamato/jp/ja/news/20200131-1502", "products", "製品・サービス"))
-                .add(new ArticlePage(new GregorianCalendar(2020, 0, 1).getTime(), "2020年　年頭のご挨拶", "/content/yamato/jp/ja/news/20200101-721", "info", "お知らせ"))
-                .add(new ArticlePage(new GregorianCalendar(2020, 1, 4).getTime(), "コラム", "/content/yamato/jp/ja/news/20200103-731", "columns", "コラム")).build();
+                .add(new ArticlePage(new GregorianCalendar(2020, 2, 6, 12, 24, 22).getTime(), "コラム", "/content/yamato/jp/ja/news/20200103-731", "columns", "コラム"))
+                .add(new ArticlePage(new GregorianCalendar(2020, 2, 6, 12, 16, 33).getTime(), "第1回 CARA ハンズオン会のご報告", "/content/yamato/jp/ja/news/20200131-1502", "products", "製品・サービス"))
+                .add(new ArticlePage(new GregorianCalendar(2020, 2, 6, 12, 16, 13).getTime(), "2020年　年頭のご挨拶", "/content/yamato/jp/ja/news/20200101-721", "info", "お知らせ"))
+                .build();
         List<ArticlePage> actual = nw.getArticlePages();
         assertIterableEquals(expected, actual);
     }
