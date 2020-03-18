@@ -3,8 +3,11 @@
         <div class="news-single-header">
             <div class="news-single-header-text">
                 <time class="date">${ 'yyyy.MM.dd' @ format=properties.date }</time>
-                <div class="category"><a href="/content/yamato/jp/ja/news/category/${ properties.category }.html"
-                        class="category-icon category-icon-${ properties.category }">${ properties.category }</a></div>
+                <div data-sly-use.category="${'com.adobe.aem.guides.yamato.core.models.news.Category'}" class="category">
+                    <a href="/content/yamato/jp/ja/news/category/${ properties.category }.html" class="category-icon category-icon-${ properties.category }">
+                        ${ category.categoryDisplayName }
+                    </a>
+                </div>
                 <h2 class="title">${ currentPage.title }</h2>
             </div>
         </div>
