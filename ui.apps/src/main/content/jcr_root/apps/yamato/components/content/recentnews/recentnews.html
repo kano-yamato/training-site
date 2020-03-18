@@ -1,0 +1,28 @@
+<div data-sly-use.newsList="${ 'com.adobe.aem.guides.yamato.core.models.news.NewsList' }"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+    data-sly-test.hasContent="${ !newsList.empty }">
+    <div class="home-section01-inner">
+        <div class="home-section01-contents">
+            <h2 class="home-section01-title">News / Column</h2>
+            <div class="home-news-list">
+                <article class="home-news-item" data-sly-list.article="${ newsList.articlePages @ begin=0, end=2 }">
+                    <span class="home-news-item-link">
+                        <time class="home-news-item-time">${ 'yyyy.MM.dd' @ format=article.date }</time>
+                        <div class="home-news-item-category">
+                            <span class="icon icon-column">${ article.categoryDisplayName }</span>
+                        </div>
+                        <h3 class="home-news-item-title">
+                            <a href="${ article.path }" rel="noopener noreferrer" target="_blank">
+                                ${ article.title }
+                            </a>
+                        </h3>
+                    </span>
+                </article>
+            </div>
+            <div class="home-news-more">
+                <a href="${ properties.newsListPath }.html">一覧を見る</a>
+            </div>
+        </div>
+    </div>
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

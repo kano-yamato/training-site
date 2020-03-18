@@ -23,8 +23,8 @@
                 cq:policy="wcm/foundation/components/responsivegrid/policy_87947020971300"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/core/components/policies/mapping">
-                <article
-                    cq:policy="yamato/components/news/article/policy_1583463315285"
+                <newsarticle
+                    cq:policy="yamato/components/structure/newsarticle/policy_1583463315285"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/core/components/policies/mapping"/>
             </responsivegrid>

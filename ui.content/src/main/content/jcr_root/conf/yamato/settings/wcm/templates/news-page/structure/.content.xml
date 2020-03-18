@@ -31,13 +31,13 @@
                     sling:resourceType="yamato/components/content/title_without_image"
                     title_en="News/Column"
                     title_ja="ニュース・コラム"/>
-                <list_1843438512
+                <newslist
                     jcr:created="{Date}2020-03-06T21:00:16.883+09:00"
                     jcr:createdBy="admin"
                     jcr:lastModified="{Date}2020-03-06T21:00:28.030+09:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="yamato/components/news/list"
+                    sling:resourceType="yamato/components/structure/newslist"
                     rootPath="/content/yamato/jp/ja/news"/>
             </responsivegrid>
             <experiencefragment-footer
