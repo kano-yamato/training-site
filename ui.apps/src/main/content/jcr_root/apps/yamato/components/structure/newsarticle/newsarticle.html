@@ -3,7 +3,7 @@
         <div class="news-single-header">
             <div class="news-single-header-text">
                 <time class="date">${ 'yyyy.MM.dd' @ format=properties.date }</time>
-                <div class="category"><a href="/content/yamato/jp/ja/news/category/${ properties.category }/"
+                <div class="category"><a href="/content/yamato/jp/ja/news/category/${ properties.category }.html"
                         class="category-icon category-icon-${ properties.category }">${ properties.category }</a></div>
                 <h2 class="title">${ currentPage.title }</h2>
             </div>
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="news-single-btn">
-            <a href="/content/yamato/jp/ja/news/" class="button button-red">ニュース・コラム一覧へ</a>
+            <a href="/content/yamato/jp/ja/news.html" class="button button-red">ニュース・コラム一覧へ</a>
         </div>
     </div>
 </article>
