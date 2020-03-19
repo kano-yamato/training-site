@@ -27,11 +27,11 @@ public class CurrentFlowTest {
     public void currentFlowIsInputTest() throws Exception {
         ctx.currentResource("/content/yamato/jp/ja/form-page/jcr:content/root/responsivegrid/container/form_current_flow");
         CurrentFlow cf = ctx.request().adaptTo(CurrentFlow.class);
-        Map<String, Boolean> expected = new ImmutableMap.Builder<String, Boolean>()
-                .put("入力", Boolean.TRUE)
-                .put("確認", Boolean.FALSE)
-                .put("完了", Boolean.FALSE).build();
-        Map<String, Boolean> actual = cf.getFlowNameToHtmlClass();
+        Map<String, String> expected = new ImmutableMap.Builder<String, String>()
+                .put("入力", "is-current")
+                .put("確認", "")
+                .put("完了", "").build();
+        Map<String, String> actual = cf.getFlowToClass();
         assertEquals(expected, actual);
     }
 }

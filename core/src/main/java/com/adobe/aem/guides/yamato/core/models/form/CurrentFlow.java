@@ -24,22 +24,26 @@ public class CurrentFlow {
     @ValueMapValue
     private String currentFlow;
 
-    private Map<String, Boolean> flowNameToHtmlClass = new LinkedHashMap<String, Boolean>();
+    private Map<String, String> flowToClass = new LinkedHashMap<String, String>();
+    private List<String> flows = new ImmutableList.Builder<String>()
+            .add("入力")
+            .add("確認")
+            .add("完了").build();
 
     @PostConstruct
     public void init() {
-        List<String> flows = new ImmutableList.Builder<String>()
-                .add("入力")
-                .add("確認")
-                .add("完了").build();
-        flows.stream().forEach(flow -> flowNameToHtmlClass.put(flow, isActive(flow)));
+        flows.stream().forEach(flow -> flowToClass.put(flow, currentClassName(flow)));
     }
 
-    private Boolean isActive(final String flow) {
-        return StringUtils.equals(flow, currentFlow);
+    private String currentClassName(final String flow) {
+        return StringUtils.equals(flow, currentFlow) ? "is-current" : "";
     }
 
-    public Map<String, Boolean> getFlowNameToHtmlClass() {
-        return flowNameToHtmlClass;
+    public Map<String, String> getFlowToClass() {
+        return flowToClass;
+    }
+
+    public List<String> getFlows() {
+        return flows;
     }
 }
