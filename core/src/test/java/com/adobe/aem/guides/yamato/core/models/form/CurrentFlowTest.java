@@ -28,10 +28,28 @@ public class CurrentFlowTest {
         ctx.currentResource("/content/yamato/jp/ja/form-page/jcr:content/root/responsivegrid/container/form_current_flow");
         CurrentFlow cf = ctx.request().adaptTo(CurrentFlow.class);
         Map<String, String> expected = new ImmutableMap.Builder<String, String>()
-                .put("入力", "is-current")
-                .put("確認", "")
-                .put("完了", "").build();
-        Map<String, String> actual = cf.getFlowToClass();
+                .put("class", "is-current").build();
+        Map<String, String> actual = cf.getInputFlowAttr();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void currentFlowIsModifyTest() throws Exception {
+        ctx.currentResource("/content/yamato/jp/ja/form-page/jcr:content/root/responsivegrid/container/form_current_flow_2");
+        CurrentFlow cf = ctx.request().adaptTo(CurrentFlow.class);
+        Map<String, String> expected = new ImmutableMap.Builder<String, String>()
+                .put("class", "is-current").build();
+        Map<String, String> actual = cf.getModifyFlowAttr();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void currentFlowIsCompleteTest() throws Exception {
+        ctx.currentResource("/content/yamato/jp/ja/form-page/jcr:content/root/responsivegrid/container/form_current_flow_3");
+        CurrentFlow cf = ctx.request().adaptTo(CurrentFlow.class);
+        Map<String, String> expected = new ImmutableMap.Builder<String, String>()
+                .put("class", "is-current").build();
+        Map<String, String> actual = cf.getCompleteFlowAttr();
         assertEquals(expected, actual);
     }
 }

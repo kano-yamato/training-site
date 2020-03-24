@@ -1,7 +1,9 @@
 <sly data-sly-use.currentFlow="${ 'com.adobe.aem.guides.yamato.core.models.form.CurrentFlow' }">
     <div class="form-flow">
-        <ol data-sly-list.flow="${ currentFlow.flows }">
-            <li class="${ currentFlow.flowToClass[flow] }">${ flow }</li>
+        <ol>
+            <li data-sly-attribute="${ currentFlow.inputFlowAttr }">入力</li>
+            <li data-sly-attribute="${ currentFlow.modifyFlowAttr }">確認</li>
+            <li data-sly-attribute="${ currentFlow.completeFlowAttr }">完了</li>
         </ol>
     </div>
 </sly>
