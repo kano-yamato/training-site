@@ -1,0 +1,5 @@
+#base=js
+jquery.js
+lib.js
+script.js
+wp-embed.min.js
