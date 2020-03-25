@@ -27,7 +27,10 @@
         <a href="${ pager.prevPath }" data-sly-test="${ pager.hasPrev }" class="previouspostslink" rel="prev">PREV</a>
         <div data-sly-list.pagerLink="${ pager.pagerLinks }" class="wp-pagenavi" role="navigation">
             <div href="${ pagerLink.path }"
-                title="Page ${ pagerLink.count }" data-sly-element="${ pagerLink.tag }">
+                class="${ pagerLink.currentAttribute }"
+                data-sly-element="${ pagerLink.tag }"
+                data-sly-attribute="${ pagerLink.title }"
+                data-sly-attribute="${ pagerLink.ariaCurrent }">
                 ${ pagerLink.count }
             </div>
         </div>
