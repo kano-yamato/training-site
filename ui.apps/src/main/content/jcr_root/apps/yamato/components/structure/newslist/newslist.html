@@ -2,14 +2,15 @@
     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
     data-sly-test.hasContent="${ !newsList.empty }">
     <sly data-sly-use.pager="${ 'com.adobe.aem.guides.yamato.core.models.news.pager.Pager' @ articlesSize=newsList.articlePages.size }"></sly>
+    <sly data-sly-use.categoryTab="${ 'com.adobe.aem.guides.yamato.core.models.news.NewsCategoryTab' }"></sly>
     <section class="news-section01">
         <div class="inner">
             <div class="news-section01-nav">
                 <ul>
-                    <li><span class="is-current">ALL</span></li>
-                    <li><a href="/content/yamato/jp/ja/news/category/info">お知らせ</a></li>
-                    <li><a href="/content/yamato/jp/ja/news/category/products">製品・サービス</a></li>
-                    <li><a href="/content/yamato/jp/ja/news/category/columns">コラム</a></li>
+                    <li><span data-sly-element="${ categoryTab.allTag }" data-sly-attribute="${ categoryTab.allAttr }">ALL</span></li>
+                    <li><span data-sly-element="${ categoryTab.infoTag }" data-sly-attribute="${ categoryTab.infoAttr }">お知らせ</a></li>
+                    <li><span data-sly-element="${ categoryTab.productsTag }" data-sly-attribute="${ categoryTab.productsAttr }">製品・サービス</a></li>
+                    <li><span data-sly-element="${ categoryTab.columnsTag }" data-sly-attribute="${ categoryTab.columnsAttr }">コラム</a></li>
                 </ul>
             </div>
             <div data-sly-list.article="${ newsList.articlePages @ begin=pager.begin, end=pager.end }" class="news-section01-list">
