@@ -11,16 +11,11 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                    <displayCount
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/form/numberfield"
-                        fieldLabel="表示件数"
-                        name="./displayCount"/>
                     <newsListPath
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                         fieldLabel="一覧ページパス"
-                        name="./newsListPath"/>
+                        name="./rootPath"/>
                 </items>
             </column>
         </items>
