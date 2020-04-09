@@ -2,7 +2,7 @@
     <div class="news-single-inner">
         <div class="news-single-header">
             <div class="news-single-header-text">
-                <time class="date">${ 'yyyy.MM.dd' @ format=properties.date }</time>
+                <time class="date">${ 'yyyy.MM.dd' @ format=pageProperties['cq:lastModified'] }</time>
                 <div data-sly-use.category="${'com.adobe.aem.guides.yamato.core.models.news.Category'}" class="category">
                     <a href="/content/yamato/jp/ja/news/category/${ properties.category }.html" class="category-icon category-icon-${ properties.category }">
                         ${ category.categoryDisplayName }
