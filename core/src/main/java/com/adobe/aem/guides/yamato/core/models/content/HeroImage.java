@@ -1,6 +1,7 @@
 package com.adobe.aem.guides.yamato.core.models.content;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -22,6 +23,7 @@ public class HeroImage {
 
     @PostConstruct
     public void init() {
+        if (items == null) items = Collections.emptyList();
         items.stream().forEach(item -> {
             heroImages.add(new Image(item));
         });
@@ -29,5 +31,9 @@ public class HeroImage {
 
     public List<Image> getHeroImages() {
         return heroImages;
+    }
+
+    public boolean isEmpty() {
+        return heroImages.isEmpty();
     }
 }
