@@ -1,23 +1,20 @@
 <sly data-sly-use.heroImage="${ 'com.adobe.aem.guides.yamato.core.models.content.HeroImage' }"
     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-    data-sly-test.hasContent="${!heroImage.empty}">
+    data-sly-test.hasContent="">
     <div class="home-hero">
         <div class="home-hero-list" id="js-home-hero-slider" data-sly-list.image="${ heroImage.heroImages }">
             <div class="home-hero-item" data-sly-attribute="${ image.backgroundStyle }">
-                <img src="${ image.src }"/>
+                <img src=""/>
                 <div class="home-hero-item-contents">
                     <div class="home-hero-item-contents-inner">
                         <p class="home-hero-item-contents-title">
-                            ${image.contentsTitle @ context='html'}
                         </p>
                         <div class="home-hero-item-contents-text">
                             <p>
-                                ${image.contentsText @ context='html'}
                             </p>
                         </div>
                         <div class="home-hero-item-contents-more">
-                            <a href="${image.url}.html" class="button button-icon button-right-arrow">
-                                ${image.buttonLabel}
+                            <a href="" class="button button-icon button-right-arrow">
                             </a>
                         </div>
                     </div>
