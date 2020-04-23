@@ -1,39 +1,33 @@
-<div data-sly-use.newsList="${ 'com.adobe.aem.guides.yamato.core.models.news.NewsList' }"
-    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
-    data-sly-test.hasContent="${ !newsList.empty }">
+<div>
+    <sly></sly>
+    <sly></sly>
     <section class="news-section01">
         <div class="inner">
             <div class="news-section01-nav">
-                <ul data-sly-use.categoryTab="${ 'com.adobe.aem.guides.yamato.core.models.news.NewsCategoryTab' }">
-                    <li><span data-sly-element="${ categoryTab.allTag }" data-sly-attribute="${ categoryTab.allAttr }">ALL</span></li>
-                    <li><span data-sly-element="${ categoryTab.infoTag }" data-sly-attribute="${ categoryTab.infoAttr }">お知らせ</span></li>
-                    <li><span data-sly-element="${ categoryTab.productsTag }" data-sly-attribute="${ categoryTab.productsAttr }">製品・サービス</span></li>
-                    <li><span data-sly-element="${ categoryTab.columnsTag }" data-sly-attribute="${ categoryTab.columnsAttr }">コラム</span></li>
+                <ul>
+                    <li><span>ALL</span></li>
+                    <li><span>お知らせ</span></li>
+                    <li><span>製品・サービス</span></li>
+                    <li><span>コラム</span></li>
                 </ul>
             </div>
-            <div data-sly-list.article="${ newsList.articlePages @ begin=newsList.begin, end=newsList.end }" class="news-section01-list">
+            <div class="news-section01-list">
                 <article class="news-section01-item">
-                    <span class="link"><time class="date">${ 'yyyy.MM.dd' @ format=article.date }</time>
+                    <span class="link"><time class="date"></time>
                         <div class="category">
-                            <span class="category-icon category-icon-${ article.category }">${ article.categoryDisplayName }</span>
-                        </div>
+                            <span class="category-icon category-icon-"></span></div>
                         <div class="title">
-                            <a href="${ article.path }.html" target="_blank" rel="noopener noreferrer">${ article.title }</a>
+                            <a href="" target="_blank" rel="noopener noreferrer"></a>
                         </div>
                     </span>
                 </article>
             </div>
         </div>
-        <div class="wp-pagenavi" role="navigation" data-sly-use.pager="${ 'com.adobe.aem.guides.yamato.core.models.news.pager.Pager' @ articlesSize=newsList.articlePages.size }">
-            <a href="${ pager.preview.path }" data-sly-test="${ pager.preview.exists }" class="previouspostslink" rel="prev">PREV</a>
-            <sly data-sly-list.pagerLink="${ pager.pagerLinks }">
-                <div href="${ pagerLink.path }"
-                    class="${ pagerLink.currentClass } page larger"
-                    data-sly-element="${ pagerLink.tag }"
-                    data-sly-attribute="${ pagerLink.attribute }">${ pagerLink.count }</div>
-            </sly>
-            <a href="${ pager.next.path }" data-sly-test="${ pager.next.exists }" class="nextpostslink" rel="next">NEXT</a>
+        <div class="wp-pagenavi" role="navigation">
+            <a href="" class="previouspostslink" rel="prev">PREV</a>
+            <div href="" class=""> </div>
+            <a href="" class="nextpostslink" rel="next">NEXT</a>
         </div>
     </section>
 </div>
-<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
+<sly></sly>
