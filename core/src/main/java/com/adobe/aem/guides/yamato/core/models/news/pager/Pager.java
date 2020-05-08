@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import com.adobe.aem.guides.yamato.core.models.news.pager.items.Begin;
-import com.adobe.aem.guides.yamato.core.models.news.pager.items.End;
 import com.adobe.aem.guides.yamato.core.models.news.pager.items.Next;
 import com.adobe.aem.guides.yamato.core.models.news.pager.items.PagerLink;
 import com.adobe.aem.guides.yamato.core.models.news.pager.items.Preview;
@@ -23,7 +21,7 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class Pager {
-    private final int ARTICLE_DISPLAY_COUNT = 10;
+    private static final int ARTICLE_DISPLAY_COUNT = 10;
 
     @RequestAttribute
     private int articlesSize;
@@ -31,15 +29,11 @@ public class Pager {
     @SlingObject
     private SlingHttpServletRequest request;
 
-    private List<PagerLink> pagerLinks = new ArrayList<PagerLink>();
+    private List<PagerLink> pagerLinks = new ArrayList<>();
 
     private Preview preview;
 
     private Next next;
-
-    private Begin begin;
-
-    private End end;
 
     @PostConstruct
     public void init() {
@@ -49,8 +43,6 @@ public class Pager {
         }
         preview = new Preview(currentPageNumber());
         next = new Next(currentPageNumber(), pagerCount);
-        begin = new Begin(ARTICLE_DISPLAY_COUNT, currentPageNumber());
-        end = new End(begin, ARTICLE_DISPLAY_COUNT);
     }
 
     private int currentPageNumber() {
@@ -69,13 +61,5 @@ public class Pager {
 
     public Next getNext() {
         return next;
-    }
-
-    public int getBegin() {
-        return begin.value();
-    }
-
-    public int getEnd() {
-        return end.value();
     }
 }

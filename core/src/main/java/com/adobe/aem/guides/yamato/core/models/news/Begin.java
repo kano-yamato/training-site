@@ -1,4 +1,4 @@
-package com.adobe.aem.guides.yamato.core.models.news.pager.items;
+package com.adobe.aem.guides.yamato.core.models.news;
 
 public class Begin {
     private int begin_;

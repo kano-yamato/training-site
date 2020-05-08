@@ -1,17 +1,22 @@
 package com.adobe.aem.guides.yamato.core.models.news;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
+import com.day.cq.commons.PathInfo;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageFilter;
 import com.day.cq.wcm.api.PageManager;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
 import org.apache.sling.api.resource.Resource;
@@ -31,6 +36,8 @@ import org.apache.sling.models.annotations.Model;
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class NewsList {
+    private static final int ARTICLE_DISPLAY_COUNT = 10;
+
     @SlingObject
     private ResourceResolver resourceResolver;
 
@@ -40,7 +47,14 @@ public class NewsList {
     @ValueMapValue
     private String rootPath;
 
-    private final List<ArticlePage> articlePages = new ArrayList<ArticlePage>();
+    @SlingObject
+    private SlingHttpServletRequest request;
+
+    private Begin begin;
+
+    private End end;
+
+    private final List<ArticlePage> articlePages = new ArrayList<>();
 
     private final Map<String, String> titleToCategory = new ImmutableMap.Builder<String, String>()
             .put("ニュース・コラム", "all")
@@ -63,6 +77,8 @@ public class NewsList {
             Comparator.comparing(Page::getLastModified).reversed()
         ).collect(Collectors.toList());
         sortedChildren.forEach(child -> articlePages.add(generateArticlePage(child)));
+        begin = new Begin(ARTICLE_DISPLAY_COUNT, currentPageNumber());
+        end = new End(begin, ARTICLE_DISPLAY_COUNT);
     }
 
     /**
@@ -103,8 +119,25 @@ public class NewsList {
         };
     }
 
+    private int currentPageNumber() {
+        List<String> selectors = Optional.ofNullable(request.getPathInfo())
+            .map(PathInfo::new)
+            .map(pathInfo -> Arrays.asList(pathInfo.getSelectors()))
+            .orElse(Collections.emptyList());
+        if (selectors.isEmpty()) return 1;
+        return Integer.parseInt(String.join("", selectors));
+    }
+
     public List<ArticlePage> getArticlePages() {
         return articlePages;
+    }
+
+    public int getBegin() {
+        return begin.value();
+    }
+
+    public int getEnd() {
+        return end.value();
     }
 
     public boolean isEmpty() {
