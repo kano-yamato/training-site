@@ -14,9 +14,11 @@
             <div data-sly-list.article="${ newsList.articlePages @ begin=newsList.begin, end=newsList.end }" class="news-section01-list">
                 <article class="news-section01-item">
                     <span class="link"><time class="date">${ 'yyyy.MM.dd' @ format=article.date }</time>
-                        <div class="category"><span class="category-icon category-icon-${ article.category }">${ article.categoryDisplayName }</span></div>
-                        <div class="title"><a href="${ article.path }.html"
-                                target="_blank" rel="noopener noreferrer">${ article.title }</a>
+                        <div class="category">
+                            <span class="category-icon category-icon-${ article.category }">${ article.categoryDisplayName }</span>
+                        </div>
+                        <div class="title">
+                            <a href="${ article.path }.html" target="_blank" rel="noopener noreferrer">${ article.title }</a>
                         </div>
                     </span>
                 </article>
