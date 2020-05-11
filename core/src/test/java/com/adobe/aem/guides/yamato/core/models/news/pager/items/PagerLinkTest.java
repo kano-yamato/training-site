@@ -35,44 +35,30 @@ public class PagerLinkTest {
     }
 
     @Test
-    public void testGetCurrentAttr_currentIsTrue() {
-        assertEquals("current", new PagerLink(1, 1).getCurrentAttribute());
+    public void testGetCurrentClass_currentIsTrue() {
+        assertEquals("current", new PagerLink(1, 1).getCurrentClass());
     }
 
     @Test
-    public void testGetCurrentAttr_currentIsFalse() {
-        assertEquals("", new PagerLink(1, 2).getCurrentAttribute());
+    public void testGetCurrentClass_currentIsFalse() {
+        assertEquals("", new PagerLink(1, 2).getCurrentClass());
     }
 
     @Test
-    public void testGetAriaCurrent_currentIsTrue() {
+    public void testGetAttribute_currentIsTrue() {
         Map<String, String> expected = new ImmutableMap.Builder<String, String>()
-                .put("aria-current", "page").build();
-        Map<String, String> actual = new PagerLink(1, 1).getAriaCurrent();
+                .put("aria-current", "page")
+                .put("title", "").build();
+        Map<String, String> actual = new PagerLink(1, 1).getAttribute();
         assertEquals(expected, actual);
     }
 
     @Test
     public void testGetAriaCurrent_currentIsFalse() {
         Map<String, String> expected = new ImmutableMap.Builder<String, String>()
-                .put("aria-current", "").build();
-        Map<String, String> actual = new PagerLink(1, 2).getAriaCurrent();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testGetTitle_currentIsTrue() {
-        Map<String, String> expected = new ImmutableMap.Builder<String, String>()
-                .put("title", "").build();
-        Map<String, String> actual = new PagerLink(1, 1).getTitle();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testGetTitle_currentIsFalse() {
-        Map<String, String> expected = new ImmutableMap.Builder<String, String>()
+                .put("aria-current", "")
                 .put("title", "Page 2").build();
-        Map<String, String> actual = new PagerLink(1, 2).getTitle();
+        Map<String, String> actual = new PagerLink(1, 2).getAttribute();
         assertEquals(expected, actual);
     }
 }
