@@ -24,18 +24,16 @@
                 </article>
             </div>
         </div>
-        <sly data-sly-use.pager="${ 'com.adobe.aem.guides.yamato.core.models.news.pager.Pager' @ articlesSize=newsList.articlePages.size }">
-            <a href="${ pager.prevPath }" data-sly-test="${ pager.hasPrev }" class="previouspostslink" rel="prev">PREV</a>
-            <div data-sly-list.pagerLink="${ pager.pagerLinks }" class="wp-pagenavi" role="navigation">
+        <div class="wp-pagenavi" role="navigation" data-sly-use.pager="${ 'com.adobe.aem.guides.yamato.core.models.news.pager.Pager' @ articlesSize=newsList.articlePages.size }">
+            <a href="${ pager.preview.path }" data-sly-test="${ pager.preview.exists }" class="previouspostslink" rel="prev">PREV</a>
+            <sly data-sly-list.pagerLink="${ pager.pagerLinks }">
                 <div href="${ pagerLink.path }"
-                    class="${ pagerLink.currentClass }"
+                    class="${ pagerLink.currentClass } page larger"
                     data-sly-element="${ pagerLink.tag }"
-                    data-sly-attribute="${ pagerLink.attribute }">
-                    ${ pagerLink.count }
-                </div>
-            </div>
-            <a href="${ pager.nextPath }" data-sly-test="${ pager.hasNext }" class="nextpostslink" rel="next">NEXT</a>
-        </sly>
+                    data-sly-attribute="${ pagerLink.attribute }">${ pagerLink.count }</div>
+            </sly>
+            <a href="${ pager.next.path }" data-sly-test="${ pager.next.exists }" class="nextpostslink" rel="next">NEXT</a>
+        </div>
     </section>
 </div>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

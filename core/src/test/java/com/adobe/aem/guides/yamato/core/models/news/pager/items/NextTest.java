@@ -19,7 +19,7 @@ public class NextTest {
 
     @Test
     public void testPreviewPath() {
-        assertEquals("/content/yamato/jp/ja/news.3.html", new Next(2, 5).getPrevPath());
+        assertEquals("/content/yamato/jp/ja/news.3.html", new Next(2, 5).getPath());
     }
 }
 

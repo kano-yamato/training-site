@@ -1,19 +1,19 @@
 package com.adobe.aem.guides.yamato.core.models.news.pager.items;
 
 public class Preview {
-    private final boolean exists_;
-    private final String prevPath_;
+    private final boolean exists;
+    private final String path;
 
     public Preview(int currentPageNumber) {
-        exists_ = currentPageNumber != 1;
-        prevPath_ = "/content/yamato/jp/ja/news." + String.valueOf(currentPageNumber - 1) + ".html";
+        exists = currentPageNumber != 1;
+        path = "/content/yamato/jp/ja/news." + (currentPageNumber - 1) + ".html";
     }
 
     public boolean exists() {
-        return exists_;
+        return exists;
     }
 
-    public String getPrevPath() {
-        return prevPath_;
+    public String getPath() {
+        return path;
     }
 }

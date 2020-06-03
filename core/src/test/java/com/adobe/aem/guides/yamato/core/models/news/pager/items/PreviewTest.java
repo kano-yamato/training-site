@@ -19,6 +19,6 @@ public class PreviewTest {
 
     @Test
     public void testPreviewPath() {
-        assertEquals("/content/yamato/jp/ja/news.1.html", new Preview(2).getPrevPath());
+        assertEquals("/content/yamato/jp/ja/news.1.html", new Preview(2).getPath());
     }
 }
