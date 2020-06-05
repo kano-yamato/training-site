@@ -21,7 +21,7 @@ public class Option {
     @SlingObject
     private Resource currentResource;
 
-    private List<OptionItem> optionItems = new ArrayList<OptionItem>();
+    private List<OptionItem> optionItems = new ArrayList<>();
 
     @PostConstruct
     public void init() {
@@ -40,5 +40,9 @@ public class Option {
 
     public List<OptionItem> getOptionItems() {
         return optionItems;
+    }
+
+    public boolean isEmpty() {
+        return optionItems.isEmpty();
     }
 }

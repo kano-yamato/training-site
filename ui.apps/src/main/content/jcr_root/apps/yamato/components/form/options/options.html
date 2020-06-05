@@ -1,6 +1,6 @@
 <sly data-sly-use.option="${ 'com.adobe.aem.guides.yamato.core.models.form.Option' }"
     data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-    data-sly-test.isNotEmpty="${option.optionItems.size}">
+    data-sly-test.hasContent="${ !option.empty }">
     <div class="form-row">
         <div class="form-label">${ properties.label }<span data-sly-test="${ properties.required }" class="required">必須</span></div>
         <div class="form-field">
